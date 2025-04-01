@@ -28,5 +28,61 @@ Este script aplica todas las recomendaciones oficiales del documento **"Optimizi
 1. Descarga el script:
 
 ```bash
-curl -O https://raw.githubusercontent.com/gabrielpc1190/ooklaserver-optimizer/main/ookla-optimize-interactive-v4.sh
+curl -O https://raw.githubusercontent.com/tu-usuario/tu-repo/main/ookla-optimize-interactive-v4.sh
 chmod +x ookla-optimize-interactive-v4.sh
+```
+
+2. Ejecútalo como root:
+
+```bash
+./ookla-optimize-interactive-v4.sh
+```
+
+3. El script te preguntará paso a paso si deseas aplicar cada ajuste.
+
+---
+
+## 📷 Capturas de ejemplo
+
+Puedes incluir capturas en la carpeta `/docs/` como esta:
+
+```markdown
+![captura](docs/screenshot-final.png)
+```
+
+---
+
+## 📚 Basado en
+
+- [Ookla – Optimizing Server Performance (PDF)](https://www.speedtest.net/enterprise)
+- Linux kernel tuning best practices
+
+---
+
+## 💡 Requisitos
+
+- Linux (Debian, Ubuntu, Proxmox, etc.)
+- Acceso root
+- `ethtool` y `iputils-ping` instalados
+
+---
+
+## 📦 Roadmap
+
+- [x] Ajustes TCP interactivos
+- [x] Validación de PMTUD
+- [ ] Exportar reporte de auditoría (`.txt`)
+- [ ] Modo no interactivo (`--auto`)
+- [ ] Soporte multiinterfaz (bond0, ethX, etc.)
+
+---
+
+## ⚠️ Aviso
+
+Este script modifica parámetros del sistema. Úsalo con precaución y revisa cada cambio si estás en producción.
+
+---
+
+## 🛠️ Autor
+
+Creado por [Gabriel Paniagua Castro] con ayuda de ChatGPT v4 🚀
