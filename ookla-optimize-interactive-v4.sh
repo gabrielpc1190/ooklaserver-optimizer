@@ -107,7 +107,7 @@ else
 fi
 
 # 8. tcp_rmem / tcp_wmem
-rmem_actual_clean=$(sysctl -n net.ipv4.tcp_rmem | xargs)
+rmem_actual_clean=$(sysctl -n net.ipv4.tcp_rmem | xargs | tr -s " ")
 rmem_recommended="4096 87380 67108864"
 if [[ "$rmem_actual_clean" != "$rmem_recommended" ]]; then
   echo "$warn tcp_rmem actual: $rmem_actual (recomendado: $rmem_recommended)"
@@ -118,7 +118,7 @@ else
   echo "$ok tcp_rmem ya está en $rmem_actual"
 fi
 
-wmem_actual_clean=$(sysctl -n net.ipv4.tcp_wmem | xargs)
+wmem_actual_clean=$(sysctl -n net.ipv4.tcp_wmem | xargs | tr -s " ")
 wmem_recommended="4096 65536 67108864"
 if [[ "$wmem_actual_clean" != "$wmem_recommended" ]]; then
   echo "$warn tcp_wmem actual: $wmem_actual (recomendado: $wmem_recommended)"
